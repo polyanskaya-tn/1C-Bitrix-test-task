@@ -18,9 +18,10 @@ BX.namespace('BX.My.MyAjax');
                 dataType: "html",
                 data: {"AJAX": "Y", "action": "GetDiscount"},
                 success: function (data) {
-                    var obj;
+                    var obj, discount;
                     obj = JSON.parse(data);
-                    $('#discount').html(obj['discount']);
+                    discount = obj['discount']+'%';
+                    $('#discount').html(discount);
                     $('#discode').html(obj['discode']);
                 }
             });
